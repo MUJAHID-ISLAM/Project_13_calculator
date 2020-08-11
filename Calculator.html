@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+<style>
+body{
+background:url("bg.png");
+}
+#calculator{
+width:310px;
+margin:0 auto;
+margin-top:200px;
+background-color:#d4d4cf;
+}
+input{
+padding: 20px;
+width:70px;
+height:60px;
+outline:none;
+border:none;
+margin:2px;
+font-size:20px;
+front-weight:bold;
+color:#545454;
+background-color:#fff;
+}
+#answer1{
+width:260px;
+height:10px;
+color:#000;
+background-color:#d4d4cf;
+}
+#right{
+background-color:#d4d4cf;
+width:100px;
+float:left;
+
+}
+#left{
+background-color:#a6a4a4; 
+width:40px;
+float:right;
+height:40px;
+}
+#left:hover{
+background-color:red;
+height:40px;
+cursor :pointer;
+}
+h3{
+margin-top:12px;
+margin-left:13px!important;
+color:#262626;
+
+}
+
+#color{
+background-color:#d4d4cf;
+background-color:red;
+
+}
+p{
+margin:5px 0px 0px 5px;
+font-size:20px;
+front-weight:bold;
+color:#7f7e7e;
+
+}
+#bg-color{
+background-color:#f1f0f0; 
+}
+#bg-color3{
+background-color:#f1f0f0;
+background:url("back.png")no-repeat; 
+}
+#bg-color3:hover{
+background:url("back2.png")no-repeat; 
+}
+#bg-color2{
+background-color:#99cef8; 
+}
+
+#bg-color2:hover{
+background-color:#81b4db; 
+}
+
+#inputBG:hover{
+background-color:#b1b1b1;
+}
+#bg-color:hover{
+background-color:#b1b1b1;
+}
+</style>
+</head>
+<body>
+<div id="blockDispaly">
+<div id ="calculator">
+<form>
+<div id = "right">
+<p>Calculator</p>
+</div>
+
+<div id = "left" onclick="display()">
+<h3 id ="click">*</h3>
+</div>
+
+<input type="tex" id="answer1" name= "answer" value=" " readonly>
+<input type="button" id="bg-color" name= "count" value = "%" onclick="form.answer.value +='%'">
+<input type="button" id="bg-color" name= "count" value = "CE" onclick="form.answer.value +=''">
+<input type="button"  id="bg-color3" name= "count" value = "<"  onclick="back()">
+<input type="button" id="bg-color" name= "count" value = "C" onclick="form.answer.value =''">
+<br>
+<input type="button" id="inputBG" name= "count"  value = "7" onclick="form.answer.value +='7'">
+<input type="button" id="inputBG" name= "count"  value = "8" onclick="form.answer.value +='8'">
+<input type="button" id="inputBG" name= "count"  value = "9" onclick="form.answer.value +='9'">
+<input type="button" id="bg-color" name= "count"  value = "*" onclick="form.answer.value +='*'">
+<br>
+<input type="button" id="inputBG" name= "count"  value = "4" onclick="form.answer.value +='4'">
+<input type="button" id="inputBG" name= "count"  value = "5" onclick="form.answer.value +='5'">
+<input type="button" id="inputBG" name= "count"  value = "6" onclick="form.answer.value +='6'">
+<input type="button" id="bg-color" name= "count"  value = "-" onclick="form.answer.value +='-'">
+<br>
+<input type="button" id="inputBG" name= "count"  value = "1" onclick="form.answer.value +='1'">
+<input type="button" id="inputBG" name= "count"  value = "2" onclick="form.answer.value +='2'">
+<input type="button" id="inputBG" name= "count"  value = "3" onclick="form.answer.value +='3'">
+<input type="button" id="bg-color" name= "count"  value = "+" onclick="form.answer.value +='+'">
+<br>
+<input type="button" id="bg-color" name= "count"  value = "/" onclick="form.answer.value +='/'">
+<input type="button" id="inputBG"  name= "count"  value = "0" onclick="form.answer.value +='0'">
+<input type="button" id="bg-color" name= "count"  value = "." onclick="form.answer.value +='.'">
+<input type="button" id="bg-color2" name= "count"  value = "=" onclick="form.answer.value = eval(form.answer.value)">
+<br>
+
+</form>
+</div>
+</div>
+<input type="text" id="inputArry" >
+<input type="button" id="Arry" onclick="my()" value="add">
+<script>
+function back(){
+var value = document.getElementById('answer1').value;
+document.getElementById('answer1').value = value.substr(0, value.length -1);
+}
+function display (){
+let displayBlock = document.getElementById('blockDispaly');
+displayBlock.style.display="none";
+}
+
+
+
+
+function my(){
+var value1 = document.getElementById('inputArry').value;
+var stor = 0;
+for (var i = 0; i <value1.length; i++){
+var total = value1[i];
+stor+= total;
+
+}
+document.getElementById('answer1').value = stor;
+}
+
+
+</script>
+</body>
+</html>
